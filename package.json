@@ -1,0 +1,28 @@
+{
+  "name": "my-metaplex",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Amat-pro/my-metaplex.git",
+  "author": "maomao <2892798998@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.3.0",
+    "chai": "^6.0.1",
+    "mocha": "^11.7.1",
+    "ts-mocha": "^11.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@solana/web3.js": "^1.98.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "test": "ts-mocha -t 1000000 tests/**/*.ts",
+    "lint": "eslint . --ext .ts"
+  }
+}

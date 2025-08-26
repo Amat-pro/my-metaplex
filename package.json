@@ -9,7 +9,11 @@
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
     "chai": "^6.0.1",
+    "depcheck": "^1.4.7",
+    "eslint": "^9.34.0",
     "mocha": "^11.7.1",
     "ts-mocha": "^11.1.0",
     "ts-node": "^10.9.2",
@@ -17,10 +21,13 @@
   },
   "dependencies": {
     "@coral-xyz/anchor": "^0.31.1",
+    "@eslint/eslintrc": "^3.3.1",
     "@solana/web3.js": "^1.98.4"
   },
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf dist",
+    "rebuild": "yarn clean && yarn build",
     "start": "ts-node src/index.ts",
     "test": "ts-mocha -t 1000000 tests/**/*.ts",
     "lint": "eslint . --ext .ts"

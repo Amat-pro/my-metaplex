@@ -1,5 +1,5 @@
 import {Connection, Keypair, LAMPORTS_PER_SOL, Signer} from "@solana/web3.js";
-import * as my_mint from "../src/spl_token";
+import * as my_mint from "../src/spl_token.js";
 
 describe("spl token", () => {
 

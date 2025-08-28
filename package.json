@@ -5,6 +5,7 @@
   "repository": "git@github.com:Amat-pro/my-metaplex.git",
   "author": "maomao <2892798998@qq.com>",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
@@ -22,15 +23,20 @@
   "dependencies": {
     "@coral-xyz/anchor": "^0.31.1",
     "@eslint/eslintrc": "^3.3.1",
+    "@metaplex-foundation/mpl-token-metadata": "^3.4.0",
+    "@metaplex-foundation/umi": "^1.2.0",
+    "@metaplex-foundation/umi-bundle-defaults": "^1.2.0",
     "@solana/spl-token": "^0.4.13",
-    "@solana/web3.js": "^1.98.4"
+    "@solana/web3.js": "^1.98.4",
+    "undici": "^7.15.0"
   },
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist",
     "rebuild": "yarn clean && yarn build",
     "start": "ts-node src/index.ts",
-    "test": "ts-mocha -t 1000000 tests/**/*.ts",
-    "lint": "eslint . --ext .ts"
+    "test": "yarn build && mocha -r chai/register-expect -t 1000000 dist/tests/**/*.js",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint --fix --ext js,ts,tsx src"
   }
 }

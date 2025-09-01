@@ -1,4 +1,3 @@
-
 async function main() {
     console.log("Hello, Metaplex!");
 }

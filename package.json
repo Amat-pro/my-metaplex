@@ -31,11 +31,11 @@
     "undici": "^7.15.0"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "yarn tsc",
     "clean": "rm -rf dist",
     "rebuild": "yarn clean && yarn build",
     "start": "ts-node src/index.ts",
-    "test": "yarn build && mocha -r chai/register-expect -t 1000000 dist/tests/**/*.js",
+    "test": "yarn build && yarn mocha -r chai/register-expect -t 1000000 dist/tests/**/*.js",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint --fix --ext js,ts,tsx src"
   }

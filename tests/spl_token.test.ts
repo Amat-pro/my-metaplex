@@ -3,6 +3,7 @@ import * as my_mint from "../src/spl_token.js";
 
 describe("spl token", () => {
 
+    // solana-test-validator
     const connection = new Connection("http://127.0.0.1:8899", "confirmed");
     const payer: Signer = Keypair.generate();
 
@@ -27,7 +28,7 @@ describe("spl token", () => {
 
     it("metaplex spl token", async () => {
         // 1. create mint
-        const mint = await my_mint.mint(connection,payer, payer.publicKey, payer.publicKey, 2)
+        const mint = await my_mint.mint(connection, payer, payer.publicKey, payer.publicKey, 2)
         console.log("mint success, mint: ", mint.toString());
         // 2. mint tokens to payer
         const mintTokenTx = await my_mint.mintTokens(connection, payer, mint, payer.publicKey, 100);
@@ -36,7 +37,7 @@ describe("spl token", () => {
         let payerBalance = await my_mint.getBalance(connection, payer, mint, payer.publicKey);
         console.log("get payer balance success, tx: ", payerBalance);
         // 4. transfer tokens
-        const to= Keypair.generate();
+        const to = Keypair.generate();
         const transferTx = await my_mint.transferTokens(connection, payer, mint, payer.publicKey, to.publicKey, 1);
         console.log("transfer tokens success, tx: ", transferTx);
         payerBalance = await my_mint.getBalance(connection, payer, mint, payer.publicKey);
